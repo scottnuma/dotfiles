@@ -53,10 +53,21 @@ set relativenumber
 set number
 syntax enable
 
+" Enable viusal mode for all modes
+:set mouse=a
+
 let mapleader = ";"
 
+
 " Set mapping for switching between buffers
-map <leader>a :bp!<CR>
-map <leader>d :bn!<CR>
+map <leader>j :bp!<CR>
+map <leader>k :bn!<CR>
 map <leader>w :bd<CR>
-map <leader>W :bd!<CR>
+map <leader>W :w<CR>:bd<CR>
+map <leader>t :new<CR>
+
+" Set the tab spacing for ruby files
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
