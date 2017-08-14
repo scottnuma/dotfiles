@@ -53,7 +53,11 @@ call vundle#begin()
 
 	" LaTeX
 	Plugin 'lervag/vimtex'
- 
+
+	" React highlighting
+	Plugin 'pangloss/vim-javascript'
+	Plugin 'mxw/vim-jsx'
+	let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 call vundle#end()
 
@@ -89,6 +93,7 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " When a single line wraps around, use j and k to navigate inside the lines
 nnoremap j gj
