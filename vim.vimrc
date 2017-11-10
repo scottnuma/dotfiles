@@ -12,25 +12,12 @@ call vundle#begin()
 	" Treat window and tmux navigation the same
 	Plugin 'christoomey/vim-tmux-navigator'
 
-	" Allow powerful Python editing
-	Plugin 'python-mode/python-mode'
-		let g:pymode = 1
-		let g:pymode_options_max_line_length = 120
-		let g:pymode_python = 'python3'
-
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
 		map <C-n> :NERDTreeToggle<CR>
 
 		" Close window if only window left is NERDTree
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-	" Markdown highlighting
-	Plugin 'godlygeek/tabular'
-	Plugin 'plasticboy/vim-markdown'
-
-	" LaTeX
-	Plugin 'lervag/vimtex'
 
 call vundle#end()
 
