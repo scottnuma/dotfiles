@@ -12,6 +12,9 @@ call vundle#begin()
 	" Treat window and tmux navigation the same
 	Plugin 'christoomey/vim-tmux-navigator'
 
+	"ctags
+	Plugin 'craigemery/vim-autotag'
+
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
 		map <C-n> :NERDTreeToggle<CR>
