@@ -57,6 +57,7 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype c setlocal ts=2 sts=2 sw=2
 
 " When a single line wraps around, use j and k to navigate inside the lines
 nnoremap j gj
