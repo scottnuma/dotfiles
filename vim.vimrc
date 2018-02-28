@@ -65,3 +65,6 @@ nnoremap k gk
 
 " make backspace work across lines
 set backspace=2 
+
+" Look in parent directories for the ctags tags file
+set tags+=tags;~
