@@ -12,6 +12,12 @@ call vundle#begin()
 	" Treat window and tmux navigation the same
 	Plugin 'christoomey/vim-tmux-navigator'
 
+	" Gotham color scheme
+	Plugin 'whatyouhide/vim-gotham'
+
+	" Ctrl p fuzzy search
+	Plugin 'ctrlpvim/ctrlp.vim'
+
 	"ctags
 	Plugin 'craigemery/vim-autotag'
 
@@ -28,6 +34,10 @@ filetype plugin indent on
 
 :imap jk <Esc>
 :imap jj <Esc>
+
+
+" Set color scheme
+colorscheme gotham
 
 set relativenumber
 set number
