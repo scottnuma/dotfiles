@@ -61,6 +61,11 @@ map <leader>W :w<CR>:bd<CR>
 map <leader>h :sv<CR>
 map <leader>v :vs<CR>
 
+" Use ctrl-c and ctrl-v for interacting with the system clipboard
+:inoremap <C-v> <ESC>"+pa
+:vnoremap <C-c> "+y
+:vnoremap <C-d> "+d
+
 " Set the tab spacing for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
