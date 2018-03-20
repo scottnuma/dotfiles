@@ -13,7 +13,10 @@ call vundle#begin()
 	Plugin 'christoomey/vim-tmux-navigator'
 
 	" Gotham color scheme
-	Plugin 'whatyouhide/vim-gotham'
+	" Plugin 'whatyouhide/vim-gotham'
+
+        " Dracula color scheme
+        Plugin 'dracula/vim'
 
 	" Ctrl p fuzzy search
 	Plugin 'ctrlpvim/ctrlp.vim'
@@ -35,9 +38,8 @@ filetype plugin indent on
 :imap jk <Esc>
 :imap jj <Esc>
 
-
 " Set color scheme
-colorscheme gotham
+colorscheme dracula
 
 set relativenumber
 set number
