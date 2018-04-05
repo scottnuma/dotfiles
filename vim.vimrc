@@ -44,6 +44,22 @@ colorscheme dracula
 set relativenumber
 set number
 syntax enable
+"
+" Always display the status line
+set laststatus=2
+ 
+set statusline=%t\        "tail of the filename
+set statusline+=%y      "filetype
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+
+set statusline+=%=      "left/right separator
+
+set statusline+=C%c\      "cursor column
+
+" Set status line to light blue on gray
+hi StatusLine ctermbg=black ctermfg=4
 
 " Enable viusal mode for all modes
 :set mouse=a
