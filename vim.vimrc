@@ -20,6 +20,7 @@ call vundle#begin()
 
 	" Ctrl p fuzzy search
 	Plugin 'ctrlpvim/ctrlp.vim'
+        let g:ctrlp_working_path_mode = 'r'
 
 	"ctags
 	Plugin 'craigemery/vim-autotag'
@@ -48,7 +49,7 @@ syntax enable
 " Always display the status line
 set laststatus=2
  
-set statusline=%t\        "tail of the filename
+set statusline=%f\      "filename
 set statusline+=%y      "filetype
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
