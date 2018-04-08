@@ -13,10 +13,14 @@ call vundle#begin()
 	Plugin 'christoomey/vim-tmux-navigator'
 
 	" Gotham color scheme
-	Plugin 'whatyouhide/vim-gotham'
+	" Plugin 'whatyouhide/vim-gotham'
+
+        " Dracula color scheme
+        Plugin 'dracula/vim'
 
 	" Ctrl p fuzzy search
 	Plugin 'ctrlpvim/ctrlp.vim'
+        let g:ctrlp_working_path_mode = 'r'
 
 	"ctags
 	Plugin 'craigemery/vim-autotag'
@@ -35,13 +39,28 @@ filetype plugin indent on
 :imap jk <Esc>
 :imap jj <Esc>
 
-
 " Set color scheme
-colorscheme gotham
+colorscheme dracula
 
 set relativenumber
 set number
 syntax enable
+"
+" Always display the status line
+set laststatus=2
+ 
+set statusline=%f\      "filename
+set statusline+=%y      "filetype
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+
+set statusline+=%=      "left/right separator
+
+set statusline+=C%c\      "cursor column
+
+" Set status line to light blue on gray
+hi StatusLine ctermbg=black ctermfg=4
 
 " Enable viusal mode for all modes
 :set mouse=a
