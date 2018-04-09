@@ -43,7 +43,7 @@ filetype plugin indent on
 set pastetoggle=<Insert>
 
 " Set color scheme
-colorscheme dracula
+" colorscheme dracula
 
 set relativenumber
 set number
