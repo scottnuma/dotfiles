@@ -39,6 +39,9 @@ filetype plugin indent on
 :imap jk <Esc>
 :imap jj <Esc>
 
+" Use the insert key to toggle paste mode in insert mode
+set pastetoggle=<Insert>
+
 " Set color scheme
 colorscheme dracula
 
