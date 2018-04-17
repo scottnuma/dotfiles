@@ -43,7 +43,7 @@ filetype plugin indent on
 set pastetoggle=<Insert>
 
 " Set color scheme
-colorscheme dracula
+" colorscheme dracula
 
 set relativenumber
 set number
@@ -95,6 +95,9 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal ts=2 sts=2 sw=2
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
 
 " Spaces not tabs
 set expandtab
