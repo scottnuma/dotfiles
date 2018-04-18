@@ -18,10 +18,6 @@ call vundle#begin()
         " Dracula color scheme
         Plugin 'dracula/vim'
 
-	" Ctrl p fuzzy search
-	Plugin 'ctrlpvim/ctrlp.vim'
-        let g:ctrlp_working_path_mode = 'r'
-
 	"ctags
 	Plugin 'craigemery/vim-autotag'
 
@@ -33,6 +29,13 @@ call vundle#begin()
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 call vundle#end()
+
+
+" Includue FZF command
+set rtp+=~/.fzf
+
+" set ctrl-p to FZF fuzzy searching
+nnoremap <silent> <C-p> :FZF<CR>
 
 filetype plugin indent on
 
