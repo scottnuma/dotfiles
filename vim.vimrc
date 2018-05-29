@@ -15,11 +15,8 @@ call vundle#begin()
 	" Gotham color scheme
 	" Plugin 'whatyouhide/vim-gotham'
 
-        " Dracula color scheme
-        Plugin 'dracula/vim'
-
 	"ctags
-	Plugin 'craigemery/vim-autotag'
+	" Plugin 'craigemery/vim-autotag'
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
@@ -44,9 +41,6 @@ filetype plugin indent on
 
 " Use the insert key to toggle paste mode in insert mode
 set pastetoggle=<Insert>
-
-" Set color scheme
-colorscheme dracula
 
 set relativenumber
 set number
@@ -98,6 +92,7 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal ts=2 sts=2 sw=2
+autocmd Filetype go setlocal ts=4 sts=4 sw=4
 
 " Spaces not tabs
 set expandtab
