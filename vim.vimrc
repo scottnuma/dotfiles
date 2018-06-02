@@ -19,7 +19,7 @@ call vundle#begin()
         Plugin 'dracula/vim'
 
 	"ctags
-	Plugin 'craigemery/vim-autotag'
+	" Plugin 'craigemery/vim-autotag'
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
