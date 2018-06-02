@@ -1,4 +1,3 @@
-
 git:
 	git config --global user.name "scottnuma";
 	git config --global user.email scott.numamoto@gmail.com;
@@ -22,3 +21,15 @@ vim-update:
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
+
+zsh:
+	# Install zsh
+	sudo apt-get install zsh
+
+	# Install Oh My Zsh - https://github.com/robbyrussell/oh-my-zsh
+	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+i3:
+	ln -sf $(shell pwd)/i3.config ~/.i3/config
+	i3-msg reload
+
