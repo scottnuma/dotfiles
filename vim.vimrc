@@ -15,8 +15,19 @@ call vundle#begin()
 	" Gotham color scheme
 	" Plugin 'whatyouhide/vim-gotham'
 
-	"ctags
+	" ctags
 	" Plugin 'craigemery/vim-autotag'
+        
+        " vim-go
+        Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+        set autowrite                           " Save on GoBuild etc
+        let g:go_fmt_command = "goimports"      " Use goimports over gofmt
+        let g:go_highlight_types = 1            " Use better syntax highlighting
+        let g:go_highlight_fields = 1
+        let g:go_highlight_functions = 1
+        let g:go_highlight_function_calls = 1
+
+
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
