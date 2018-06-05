@@ -16,7 +16,7 @@ call vundle#begin()
 	" Plugin 'whatyouhide/vim-gotham'
 
 	"ctags
-	" Plugin 'craigemery/vim-autotag'
+	Plugin 'craigemery/vim-autotag'
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
@@ -106,3 +106,6 @@ set backspace=2
 
 " Look in parent directories for the ctags tags file
 set tags+=tags;~
+
+" Set the working directory as the current directoy 
+set autochdir

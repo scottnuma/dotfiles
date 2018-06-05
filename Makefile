@@ -16,6 +16,7 @@ vim:
 
 vim-update:
 	ln -sf $(shell pwd)/vim.vimrc ~/.vimrc
+	ln -sf $(shell pwd)/ctags.ctags ~/.ctags
 	vim +PluginInstall +qall
 
 fzf:
