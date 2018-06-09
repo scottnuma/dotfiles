@@ -33,3 +33,6 @@ i3:
 	ln -sf $(shell pwd)/i3.config ~/.i3/config
 	i3-msg reload
 
+capslock:
+	cp $(shell pwd)/xmodmap.txt ~/.Xmodmap
+	xmodmap ~/.Xmodmap
