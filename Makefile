@@ -36,3 +36,9 @@ i3:
 capslock:
 	cp $(shell pwd)/xmodmap.txt ~/.Xmodmap
 	xmodmap ~/.Xmodmap
+
+# use phony since polybar/ exists
+.PHONY: polybar
+polybar:
+	ln -sf $(shell pwd)/polybar/polybar.config ~/.config/polybar/config
+	ln -sf $(shell pwd)/polybar/startup_launch ~/.config/polybar/startup_launch.sh
