@@ -27,8 +27,6 @@ call vundle#begin()
         let g:go_highlight_functions = 1
         let g:go_highlight_function_calls = 1
 
-
-
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
 		map <C-n> :NERDTreeToggle<CR>
@@ -117,3 +115,6 @@ set backspace=2
 
 " Look in parent directories for the ctags tags file
 set tags+=tags;~
+
+" Set the working directory as the current directoy 
+set autochdir
