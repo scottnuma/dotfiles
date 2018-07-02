@@ -1,4 +1,4 @@
-set nocompatible
+ set nocompatible
 filetype off  
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -12,8 +12,8 @@ call vundle#begin()
 	" Treat window and tmux navigation the same
 	Plugin 'christoomey/vim-tmux-navigator'
 
-	" Gotham color scheme
-	" Plugin 'whatyouhide/vim-gotham'
+        " Gotham color scheme
+	Plugin 'whatyouhide/vim-gotham'
 
 	" ctags
 	" Plugin 'craigemery/vim-autotag'
@@ -26,6 +26,9 @@ call vundle#begin()
         let g:go_highlight_fields = 1
         let g:go_highlight_functions = 1
         let g:go_highlight_function_calls = 1
+
+        " delve - go debugging
+        Plugin 'sebdah/vim-delve'
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
@@ -102,6 +105,7 @@ autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype c setlocal ts=2 sts=2 sw=2
 autocmd Filetype go setlocal ts=4 sts=4 sw=4
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " Spaces not tabs
 set expandtab
@@ -118,3 +122,10 @@ set tags+=tags;~
 
 " Set the working directory as the current directoy 
 set autochdir
+
+if has("nvim")
+        set termguicolors
+endif
+
+" Set color scheme
+colorscheme gotham
