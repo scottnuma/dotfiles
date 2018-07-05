@@ -28,7 +28,7 @@ call vundle#begin()
         let g:go_highlight_function_calls = 1
 
         " delve - go debugging
-        Plugin 'sebdah/vim-delve'
+        " Plugin 'sebdah/vim-delve'
 
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'

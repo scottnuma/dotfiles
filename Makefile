@@ -7,6 +7,11 @@ tmux:
 	ln -sf $(shell pwd)/tmux.tmux.conf ~/.tmux.conf
 	tmux source-file ~/.tmux.conf
 
+nvim:
+	git config --global core.editor nvim
+	mkdir -p ~/.config/nvim
+	ln -sf $(shell pwd)/vim.vimrc ~/.config/nvim/init.vim
+
 vim:
 	ln -sf $(shell pwd)/vim.vimrc ~/.vimrc
 	ln -sf $(shell pwd)/ctags.ctags ~/.ctags
