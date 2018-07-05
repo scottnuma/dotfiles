@@ -24,6 +24,9 @@ vim-update:
 	ln -sf $(shell pwd)/ctags.ctags ~/.ctags
 	vim +PluginInstall +qall
 
+key-map:
+	ln -sf $(shell pwd)/key-map.xbindkeysrc ~/.xbindkeysrc
+
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
