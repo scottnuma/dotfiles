@@ -31,10 +31,7 @@ fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
 
-zsh:
-	# Install zsh
-	sudo apt-get install zsh
-
+oh-my-zsh:
 	# Install Oh My Zsh - https://github.com/robbyrussell/oh-my-zsh
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
