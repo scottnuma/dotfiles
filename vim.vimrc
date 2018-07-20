@@ -17,6 +17,13 @@ call vundle#begin()
 
 	" ctags
 	" Plugin 'craigemery/vim-autotag'
+
+        " Ale
+        Plugin 'w0rp/ale'
+        let g:ale_fix_on_save = 1
+        let g:ale_fixers = {
+        \ 'python':['autopep8']
+        \}
         
         " vim-go
         Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
