@@ -22,7 +22,7 @@ call vundle#begin()
         Plugin 'w0rp/ale'
         let g:ale_fix_on_save = 1
         let g:ale_fixers = {
-        \ 'python':['autopep8']
+        \ 'python':['autopep8', 'isort']
         \}
         
         " vim-go
