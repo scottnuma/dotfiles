@@ -36,6 +36,7 @@ oh-my-zsh:
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 i3:
+	mkdir -p ~/.i3/
 	ln -sf $(shell pwd)/i3.config ~/.i3/config
 	i3-msg reload
 
@@ -46,5 +47,6 @@ capslock:
 # use phony since polybar/ exists
 .PHONY: polybar
 polybar:
+	mkdir -p ~/.config/polybar
 	ln -sf $(shell pwd)/polybar/polybar.config ~/.config/polybar/config
 	ln -sf $(shell pwd)/polybar/startup_launch.sh ~/.config/polybar/startup_launch.sh
