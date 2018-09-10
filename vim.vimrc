@@ -15,6 +15,8 @@ call vundle#begin()
         " Gotham color scheme
 	Plugin 'whatyouhide/vim-gotham'
 
+        Plugin 'nightsense/snow'
+
 	" ctags
 	" Plugin 'craigemery/vim-autotag'
 
@@ -22,8 +24,9 @@ call vundle#begin()
         Plugin 'w0rp/ale'
         let g:ale_fix_on_save = 1
         let g:ale_fixers = {
-        \ 'python':['autopep8']
+        \ 'python':['autopep8', 'isort'],
         \}
+        let g:ale_lint_on_text_changed = 'never'
         
         " vim-go
         Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -136,3 +139,5 @@ endif
 
 " Set color scheme
 colorscheme gotham
+" colorscheme snow
+
