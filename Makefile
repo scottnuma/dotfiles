@@ -27,6 +27,9 @@ vim-update:
 key-map:
 	ln -sf $(shell pwd)/key-map.xbindkeysrc ~/.xbindkeysrc
 
+redshift: 
+	mkdir -p ~/.config/redshift
+	ln -sf $(shell pwd)/redshift.conf ~/.config/redshift/redshift.conf
 fzf:
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
