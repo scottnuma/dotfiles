@@ -1,55 +1,50 @@
+.PHONY: git
 git:
-	git config --global user.name scottnuma;
-	git config --global user.email scott.numamoto@gmail.com;
-	git config --global core.editor vim
+	stow -v --dotfiles git
 
-tmux:
-	ln -sf $(shell pwd)/tmux.tmux.conf ~/.tmux.conf
-	tmux source-file ~/.tmux.conf
-
-nvim:
-	git config --global core.editor nvim
-	mkdir -p ~/.config/nvim
-	ln -sf $(shell pwd)/vim.vimrc ~/.config/nvim/init.vim
-
+.PHONY: vim
 vim:
-	ln -sf $(shell pwd)/vim.vimrc ~/.vimrc
-	ln -sf $(shell pwd)/ctags.ctags ~/.ctags
+	stow -v --dotfiles vim
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
-	echo 'source ~/.vimrc' > ~/.ideavimrc
 
+.PHONY: tmux
+tmux:
+	stow -v --dotfiles tmux
+	tmux source-file ~/.tmux.conf
+
+.PHONY: zsh
+zsh:
+	stow -v --dotfiles zsh
+
+.PHONY: neovim
+neovim:
+	git config --global core.editor nvim
+	stow -v neovim
+
+.PHONY: vim-update
 vim-update:
-	ln -sf $(shell pwd)/vim.vimrc ~/.vimrc
-	ln -sf $(shell pwd)/ctags.ctags ~/.ctags
+	stow -v --dotfiles vim
 	vim +PluginInstall +qall
 
+.PHONY: key-map
 key-map:
-	ln -sf $(shell pwd)/key-map.xbindkeysrc ~/.xbindkeysrc
+	stow -v --dotfiles key-map
 
+.PHONY: redshift
 redshift: 
-	mkdir -p ~/.config/redshift
-	ln -sf $(shell pwd)/redshift.conf ~/.config/redshift/redshift.conf
-fzf:
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install
+	stow -v redshift
 
-oh-my-zsh:
-	# Install Oh My Zsh - https://github.com/robbyrussell/oh-my-zsh
-	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
+.PHONY: i3
 i3:
-	mkdir -p ~/.i3/
-	ln -sf $(shell pwd)/i3.config ~/.i3/config
+	stow -v i3
 	i3-msg reload
 
+.PHONY: capslock
 capslock:
-	cp $(shell pwd)/xmodmap.txt ~/.Xmodmap
+	stow -v --dotfiles capslock
 	xmodmap ~/.Xmodmap
 
-# use phony since polybar/ exists
 .PHONY: polybar
 polybar:
-	mkdir -p ~/.config/polybar
-	ln -sf $(shell pwd)/polybar/polybar.config ~/.config/polybar/config
-	ln -sf $(shell pwd)/polybar/startup_launch.sh ~/.config/polybar/startup_launch.sh
+	stow -v polybar

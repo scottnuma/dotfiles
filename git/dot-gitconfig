@@ -1,0 +1,5 @@
+[user]
+	name = scottnuma
+	email = scott.numamoto@gmail.com
+[core]
+	editor = nvim

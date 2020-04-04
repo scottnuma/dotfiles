@@ -1,0 +1,1 @@
+/home/scott/dotfiles/vim/dot-vimrc
