@@ -1,0 +1,2 @@
+# Explicitly ignore git to exlclude it from fd | fzf 
+.git

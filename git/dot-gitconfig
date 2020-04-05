@@ -3,3 +3,4 @@
 	email = scott.numamoto@gmail.com
 [core]
 	editor = nvim
+	excludesfile = /home/scott/.gitignore_global
