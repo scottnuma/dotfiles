@@ -4,7 +4,7 @@ PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/scott/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export FZF_BASE=/usr/bin/fzf
 
 # Set name of the theme to load --- if set to "random", it will
@@ -105,7 +105,7 @@ alias vim=nvim
 # source <(kubectl completion zsh)
 
 # Go
-GOPATH=/home/scott/go
+GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/go/bin
 
