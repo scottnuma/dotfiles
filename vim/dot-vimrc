@@ -51,6 +51,7 @@ call vundle#begin()
         let g:fzf_layout = { 'up': '~40%' }
         
         " vim-go
+        "
         Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
         set autowrite                           " Save on GoBuild etc
         let g:go_fmt_command = "goimports"      " Use goimports over gofmt
@@ -68,6 +69,9 @@ call vundle#begin()
 
 		" Close window if only window left is NERDTree
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+        " Render buffers as tabs: https://github.com/zefei/vim-wintabs
+        Plugin 'zefei/vim-wintabs'
 
 call vundle#end()
 
@@ -109,14 +113,13 @@ let mapleader = ";"
 set hlsearch
 
 " Set mapping for switching between buffers
-map <leader>j :bp!<CR>
-map <leader>k :bn!<CR>
-map <leader>w :bd<CR>
-map <leader>W :w<CR>:bd<CR>
+map <leader>l :WintabsNext<CR>
+map <leader>h :WintabsPrevious<CR>
+map <leader>w :WintabsClose<CR>
 
 " Set shortcut for vim spitting the screen
-map <leader>h :sv<CR>
-map <leader>v :vs<CR>
+map <leader>" :sv<CR>
+map <leader>% :vs<CR>
 
 " Use ctrl-c and ctrl-v for interacting with the system clipboard
 :inoremap <C-v> <ESC>"+pa
@@ -147,7 +150,7 @@ set backspace=2
 set tags+=tags;~
 
 " Set the working directory as the current directoy 
-set autochdir
+" set autochdir
 
 if has("nvim")
         set termguicolors
