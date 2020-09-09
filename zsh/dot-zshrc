@@ -106,7 +106,8 @@ alias vim=nvim
 
 # Go
 GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
+GOBIN=$GOPATH/bin
+PATH=$PATH:$GOBIN
 PATH=$PATH:/usr/local/go/bin
 
 # Activate aactivator
