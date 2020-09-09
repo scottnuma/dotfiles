@@ -118,3 +118,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --hidden --type d . --color=never'
 
 . ~/.lyft.zshrc
+
+# Add support for Go modules and Lyft's Athens module proxy/store
+# These variables were added by 'hacktools/set_go_env_vars.sh'
+export GO111MODULE='on'
