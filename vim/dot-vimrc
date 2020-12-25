@@ -227,3 +227,8 @@ nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+
+" Default to case insensitive search 
+set ignorecase
+" Use case sensitivity if we use a capital letter
+set smartcase
