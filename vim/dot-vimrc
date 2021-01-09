@@ -66,6 +66,8 @@ call vundle#begin()
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
         Plugin 'zefei/vim-wintabs'
 
+        Plugin 'Vimjas/vim-python-pip8-indent'
+
 call vundle#end()
 
 
