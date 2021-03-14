@@ -48,12 +48,15 @@ call vundle#begin()
         let g:go_highlight_fields = 1
         let g:go_highlight_functions = 1
         let g:go_highlight_function_calls = 1
+        let g:go_doc_keywordprg_enabled = 0
+
 
         " disable vim-go :GoDef short cut (gd)
         " this is handled by LanguageClient [LC]
         let g:go_def_mapping_enabled = 0
         
         Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+        source ~/.coc.vimrc
 
 
 	" NERDTree
@@ -65,6 +68,10 @@ call vundle#begin()
 
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
         Plugin 'zefei/vim-wintabs'
+        let g:wintabs_display = "statusline"
+        let g:wintabs_autoclose = 2
+        let g:wintabs_autoclose_vim = 1
+        let g:wintabs_autoclose_vimtab = 1
 
         Plugin 'Vimjas/vim-python-pip8-indent'
 
@@ -133,6 +140,7 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " Spaces not tabs
 set expandtab
+        
 
 " When a single line wraps around, use j and k to navigate inside the lines
 " nnoremap j gj
