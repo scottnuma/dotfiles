@@ -20,7 +20,7 @@ zsh:
 .PHONY: neovim
 neovim:
 	git config --global core.editor nvim
-	stow -v neovim
+	stow -v --dotfiles neovim
 
 .PHONY: vim-update
 vim-update:
