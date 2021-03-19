@@ -32,7 +32,7 @@ alias jk="cd .."
 alias vim=nvim
 
 # Auto completion for kubectl
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # Go
 GOPATH=$HOME/go
