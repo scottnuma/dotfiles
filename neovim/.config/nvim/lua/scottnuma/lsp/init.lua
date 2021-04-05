@@ -30,6 +30,6 @@ require'lspconfig'.tsserver.setup{
 require'lspconfig'.gopls.setup{
   on_attach = on_attach
 }
-require'lspconfig'.sorbet.setup{
+require'lspconfig'.solargraph.setup{
   on_attach = on_attach
 }
