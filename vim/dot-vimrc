@@ -98,7 +98,6 @@ call vundle#begin()
 call vundle#end()
 
 
-filetype plugin indent on
 
 :imap jk <Esc>
 :imap jj <Esc>
@@ -148,7 +147,8 @@ map <leader>% :vs<CR>
 :vnoremap <C-c> "+y
 :vnoremap <C-d> "+d
 
-" Set the tab spacing for ruby files
+filetype plugin indent on
+
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
@@ -159,7 +159,7 @@ autocmd Filetype go setlocal ts=4 sts=4 sw=4
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " Spaces not tabs
-set expandtab
+" set expandtab
         
 
 " When a single line wraps around, use j and k to navigate inside the lines
