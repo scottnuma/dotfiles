@@ -4,3 +4,5 @@
 [core]
 	editor = nvim
 	excludesfile = /home/scott/.gitignore_global
+[url "git@github.com:"]
+	insteadOf = https://github.com/
