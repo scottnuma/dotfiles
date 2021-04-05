@@ -39,9 +39,6 @@ call vundle#begin()
 
                 let g:fzf_layout = { 'up': '~40%' }
 
-                " set ^F to ripgrep searching
-                " nmap <C-S-F> :Rg<CR>
-
         
         " vim-go
        
@@ -78,6 +75,25 @@ call vundle#begin()
 
         " neovim lsp config
         Plugin 'neovim/nvim-lspconfig'
+
+
+        " sublime style ctrl shift f
+        " https://github.com/dyng/ctrlsf.vim
+        Plugin 'dyng/ctrlsf.vim'
+                " prompt for the search word
+                nmap     <C-F>f <Plug>CtrlSFPrompt
+
+                " prompt, filled with  the word under the cursor
+                nmap     <C-F>n <Plug>CtrlSFCwordPath
+                vmap     <C-F>f <Plug>CtrlSFVwordPath
+
+                " search for the word under the cursor
+                nmap     <C-F>p <Plug>CtrlSFPwordPath
+                vmap     <C-F>F <Plug>CtrlSFVwordExec
+
+                " Toggle the preview window open and shut
+                nnoremap <C-F>t :CtrlSFToggle<CR>
+                inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 call vundle#end()
 
