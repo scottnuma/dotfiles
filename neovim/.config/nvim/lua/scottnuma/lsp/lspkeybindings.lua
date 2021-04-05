@@ -23,7 +23,7 @@ on_attach = function(client, bufnr)
         -- Lists all the implementations for the symbol under the cursor
         -- in the quickfix window.
 
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<C-S-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         -- Displays signature information about the symbol under the
         -- cursor in a floating window.
 
