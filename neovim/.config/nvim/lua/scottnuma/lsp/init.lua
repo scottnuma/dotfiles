@@ -8,9 +8,9 @@ require'lspconfig'.pyright.setup{
 require'lspconfig'.vimls.setup{
   on_attach = on_attach
 }
-require'lspconfig'.yamlls.setup{
-  on_attach = on_attach
-}
+-- require'lspconfig'.yamlls.setup{
+--  on_attach = on_attach
+-- }
 require'lspconfig'.jsonls.setup {
   on_attach = on_attach,
   commands = {

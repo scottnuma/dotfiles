@@ -27,7 +27,7 @@ call vundle#begin()
                 function! s:find_git_root()
                         return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
                 endfunction
-                command! ProjectFiles execute 'Files' s:find_git_root()
+                command! ProjectFiles execute 'GFiles' s:find_git_root()
 
                 " set ctrl-p to FZF fuzzy searching from the git root
                 nnoremap <silent> <C-p> :ProjectFiles<CR>
@@ -61,6 +61,7 @@ call vundle#begin()
 		map <C-n> :NERDTreeToggle<CR>
 
 		" Close window if only window left is NERDTree
+		"
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
@@ -69,34 +70,37 @@ call vundle#begin()
         let g:wintabs_autoclose = 2
         let g:wintabs_autoclose_vim = 1
         let g:wintabs_autoclose_vimtab = 1
+	let g:wintabs_ui_active_higroup = 'TabLineSel'
 
         " treesitter
         Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-        " neovim lsp config
-        Plugin 'neovim/nvim-lspconfig'
-
-
         " sublime style ctrl shift f
         " https://github.com/dyng/ctrlsf.vim
         Plugin 'dyng/ctrlsf.vim'
-                " prompt for the search word
-                nmap     <C-F>f <Plug>CtrlSFPrompt
 
-                " prompt, filled with  the word under the cursor
-                nmap     <C-F>n <Plug>CtrlSFCwordPath
-                vmap     <C-F>f <Plug>CtrlSFVwordPath
-
-                " search for the word under the cursor
-                nmap     <C-F>p <Plug>CtrlSFPwordPath
-                vmap     <C-F>F <Plug>CtrlSFVwordExec
-
-                " Toggle the preview window open and shut
-                nnoremap <C-F>t :CtrlSFToggle<CR>
-                inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
+        " neovim lsp config
+        Plugin 'neovim/nvim-lspconfig'
 call vundle#end()
 
+" dyng/ctrlsf.vim 
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_backend = 'rg'
+
+" prompt for the search word
+nmap     <leader>ff <Plug>CtrlSFPrompt
+
+" prompt, filled with  the word under the cursor
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+
+" search for the word under the cursor
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+
+" Toggle the preview window open and shut
+nnoremap <leader>ft :CtrlSFToggle<CR>
+inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
 
 :imap jk <Esc>
@@ -137,10 +141,7 @@ set hlsearch
 map <leader>l :WintabsNext<CR>
 map <leader>h :WintabsPrevious<CR>
 map <leader>w :WintabsClose<CR>
-
-" Set shortcut for vim spitting the screen
-map <leader>" :sv<CR>
-map <leader>% :vs<CR>
+map <leader>W :WintabsCloseWindow<CR>
 
 " Use ctrl-c and ctrl-v for interacting with the system clipboard
 :inoremap <C-v> <ESC>"+pa
@@ -161,11 +162,6 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 " Spaces not tabs
 " set expandtab
         
-
-" When a single line wraps around, use j and k to navigate inside the lines
-" nnoremap j gj
-" nnoremap k gk
-
 " make backspace work across lines
 set backspace=2 
 
