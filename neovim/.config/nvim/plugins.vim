@@ -101,6 +101,9 @@ call vundle#begin()
 		" Toggle the preview window open and shut
 		nnoremap <leader>ft :CtrlSFToggle<CR>
 		inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+
+	Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#enable_at_startup = 1
 call vundle#end()
 
 
