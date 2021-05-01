@@ -30,6 +30,7 @@ fi
 
 alias jk="cd .."
 alias vim=nvim
+alias cat="bat"
 
 # Auto completion for kubectl
 # source <(kubectl completion zsh)
