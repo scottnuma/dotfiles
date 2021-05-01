@@ -94,6 +94,12 @@ endif
 
 
 colorscheme one
+" dark mode enabled?
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+   set background=dark
+else
+  set background=light
+endif
 
 " Default to case insensitive search 
 set ignorecase
