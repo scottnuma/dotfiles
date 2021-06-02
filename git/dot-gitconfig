@@ -4,7 +4,13 @@
 [core]
 	editor = nvim
 	excludesfile = /home/scott/.gitignore_global
+	pager = delta
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [pull]
 	ff = only
+
+[delta]
+    side-by-side = true
+[alias]
+	switcher = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
