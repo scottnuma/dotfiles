@@ -54,11 +54,15 @@ call vundle#begin()
         
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
-		map <C-n> :NERDTreeToggle<CR>
+		map <C-n> :NERDTreeFind<CR>
 
 		" Close window if only window left is NERDTree
-		"
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+		" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+		autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+		\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
 
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
         Plugin 'zefei/vim-wintabs'
