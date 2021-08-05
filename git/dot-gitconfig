@@ -11,6 +11,8 @@
 	ff = only
 
 [delta]
-    side-by-side = true
+	side-by-side = true
 [alias]
-	switcher = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+	switcher = !git branch --sort=-committerdate --format='%(refname:short)' | fzf | xargs git checkout
+	switcher-old = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+	push-this = push -u origin HEAD
