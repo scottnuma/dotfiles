@@ -54,7 +54,8 @@ call vundle#begin()
         
 	" NERDTree
 	Plugin 'scrooloose/nerdtree'
-		map <C-n> :NERDTreeFind<CR>
+		map <C-n> :NERDTreeToggle<CR>
+		map <leader>n :NERDTreeFind<CR>
 
 		" Close window if only window left is NERDTree
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
