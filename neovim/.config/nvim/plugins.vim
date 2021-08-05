@@ -109,6 +109,9 @@ call vundle#begin()
 
 	Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	let g:deoplete#enable_at_startup = 1
+
+	Plugin 'f-person/git-blame.nvim'
+	let g:gitblame_enabled = 0
 call vundle#end()
 
 
