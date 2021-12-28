@@ -115,5 +115,6 @@ set foldlevel=10
 lua <<EOF
 require('scottnuma/lsp')
 require('scottnuma/treesitter')
+require('scottnuma/treesittertextobjects')
 EOF
 

@@ -128,5 +128,13 @@ call plug#begin('~/.vim/plugged')
 		" Disable auto-completion in telescope
 		autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
 
+	" See the current function
+	Plug 'romgrk/nvim-treesitter-context'
+
+	" Text objects
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+	" Commenting  command - `gcc`
+	Plug 'tpope/vim-commentary'
 
 call plug#end()
