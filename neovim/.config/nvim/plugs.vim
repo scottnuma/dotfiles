@@ -1,22 +1,27 @@
-call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+
+call plug#begin('~/.vim/plugged')
 	" Use colorful rainbow parentheses
-	Plugin 'luochen1990/rainbow'
+	Plug 'luochen1990/rainbow'
 		let g:rainbow_active = 1
 
 	" Treat window and tmux navigation the same
-	Plugin 'christoomey/vim-tmux-navigator'
+	Plug 'christoomey/vim-tmux-navigator'
 
         " Gotham color scheme
-	" Plugin 'whatyouhide/vim-gotham'
+	" Plug 'whatyouhide/vim-gotham'
 
         " Vim-one color scheme https://github.com/rakr/vim-one
-        Plugin 'rakr/vim-one'
+        Plug 'rakr/vim-one'
 
         " fzf
-        Plugin 'junegunn/fzf'
-        Plugin 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'junegunn/fzf.vim'
 
                 " Define a new command that searches from the project root as defined
                 " by git
@@ -39,7 +44,7 @@ call vundle#begin()
         
         " vim-go
        
-        Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
         set autowrite                           " Save on GoBuild etc
         let g:go_fmt_command = "goimports"      " Use goimports over gofmt
         let g:go_highlight_types = 1            " Use better syntax highlighting
@@ -54,7 +59,7 @@ call vundle#begin()
         let g:go_def_mapping_enabled = 0
         
 	" NERDTree
-	Plugin 'scrooloose/nerdtree'
+	Plug 'preservim/nerdtree'
 		map <C-n> :NERDTreeToggle<CR>
 		map <leader>n :NERDTreeFind<CR>
 
@@ -67,7 +72,7 @@ call vundle#begin()
 
 
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
-        Plugin 'zefei/vim-wintabs'
+        Plug 'zefei/vim-wintabs'
         let g:wintabs_display = "statusline"
         let g:wintabs_autoclose = 2
         let g:wintabs_autoclose_vim = 1
@@ -81,14 +86,14 @@ call vundle#begin()
 	map <leader>W :WintabsCloseWindow<CR>
 
         " treesitter
-        Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
         " sublime style ctrl shift f
         " https://github.com/dyng/ctrlsf.vim
-        Plugin 'dyng/ctrlsf.vim'
+        Plug 'dyng/ctrlsf.vim'
 
         " neovim lsp config
-        Plugin 'neovim/nvim-lspconfig'
+        Plug 'neovim/nvim-lspconfig'
 		" dyng/ctrlsf.vim 
 		let g:ctrlsf_default_root = 'project'
 		let g:ctrlsf_backend = 'rg'
@@ -108,21 +113,20 @@ call vundle#begin()
 		nnoremap <leader>ft :CtrlSFToggle<CR>
 		inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
-	Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	let g:deoplete#enable_at_startup = 1
 
-	Plugin 'f-person/git-blame.nvim'
+	Plug 'f-person/git-blame.nvim'
 	let g:gitblame_enabled = 0
 	nmap	<leader>gb :GitBlameToggle<CR>
 
 	" Telescope
-	Plugin 'nvim-lua/popup.nvim'
-	Plugin 'nvim-lua/plenary.nvim'
-	Plugin 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 
 		" Disable auto-completion in telescope
 		autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
 
-call vundle#end()
 
-
+call plug#end()

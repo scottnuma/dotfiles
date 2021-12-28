@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 let mapleader = ";"
 
-source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/plugs.vim
 
 imap jk <Esc>
 imap jj <Esc>
