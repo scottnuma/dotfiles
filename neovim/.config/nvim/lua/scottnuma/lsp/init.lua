@@ -29,9 +29,25 @@ require'lspconfig'.bashls.setup{
 require'lspconfig'.tsserver.setup{
   on_attach = on_attach
 }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 require'lspconfig'.gopls.setup{
+  cmd = {"gopls", "serve"},
+  settings = {
+    gopls = {
+      -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+  capabilities = capabilities,
   on_attach = on_attach
 }
+
 require'lspconfig'.solargraph.setup{
   on_attach = on_attach
 }
