@@ -26,7 +26,8 @@ call vundle#begin()
                 command! ProjectFiles execute 'Files' s:find_git_root()
 
                 " set ctrl-p to FZF fuzzy searching from the git root
-                nnoremap <silent> <C-p> :ProjectFiles<CR>
+                " nnoremap <silent> <C-p> :ProjectFiles<CR>
+		nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
 
                 let g:fzf_action = {
                   \ 'ctrl-t': 'tab split',
@@ -112,6 +113,16 @@ call vundle#begin()
 
 	Plugin 'f-person/git-blame.nvim'
 	let g:gitblame_enabled = 0
+	nmap	<leader>gb :GitBlameToggle<CR>
+
+	" Telescope
+	Plugin 'nvim-lua/popup.nvim'
+	Plugin 'nvim-lua/plenary.nvim'
+	Plugin 'nvim-telescope/telescope.nvim'
+
+		" Disable auto-completion in telescope
+		autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
+
 call vundle#end()
 
 
