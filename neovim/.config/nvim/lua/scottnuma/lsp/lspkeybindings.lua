@@ -27,18 +27,6 @@ on_attach = function(client, bufnr)
         -- Displays signature information about the symbol under the
         -- cursor in a floating window.
 
--- maybe delete this
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-        -- Add the folder at path to the workspace folders. If {path} is
-        -- not provided, the user will be prompted for a path using
-        -- |input()|.
-
--- maybe delete this
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-        -- Remove the folder at path from the workspace folders. If
-        -- {path} is not provided, the user will be prompted for a path
-        -- using |input()|.
-
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
         -- list workspace folders
 
