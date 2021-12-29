@@ -58,17 +58,11 @@ call plug#begin('~/.vim/plugged')
         " this is handled by LanguageClient [LC]
         let g:go_def_mapping_enabled = 0
         
-	" NERDTree
-	Plug 'preservim/nerdtree'
-		map <C-n> :NERDTreeToggle<CR>
-		map <leader>n :NERDTreeFind<CR>
+	" Chadtree file explorer
+	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+		nnoremap <leader>n <cmd>CHADopen<cr>
+		let g:chadtree_settings = {'keymap.v_split': ['v'], 'keymap.h_split': ['h']}
 
-		" Close window if only window left is NERDTree
-		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-		" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-		autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-		\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 
         " Render buffers as tabs: https://github.com/zefei/vim-wintabs
