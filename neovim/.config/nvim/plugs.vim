@@ -107,12 +107,16 @@ call plug#begin('~/.vim/plugged')
 		nnoremap <leader>ft :CtrlSFToggle<CR>
 		inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	let g:deoplete#enable_at_startup = 1
+	" Autocomplete 
+	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+	" Snippets suggested by auto-completion 
+	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+	let g:coq_settings = { 'auto_start': 'shut-up', 'keymap':{'pre_select':v:true, 'jump_to_mark':'<c-t>'}}
 
 	Plug 'f-person/git-blame.nvim'
 	let g:gitblame_enabled = 0
 	nmap	<leader>gb :GitBlameToggle<CR>
+	
 
 	" Telescope
 	Plug 'nvim-lua/popup.nvim'
