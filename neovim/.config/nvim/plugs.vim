@@ -13,9 +13,6 @@ call plug#begin('~/.vim/plugged')
 	" Treat window and tmux navigation the same
 	Plug 'christoomey/vim-tmux-navigator'
 
-        " Gotham color scheme
-	" Plug 'whatyouhide/vim-gotham'
-
         " Vim-one color scheme https://github.com/rakr/vim-one
         Plug 'rakr/vim-one'
 
