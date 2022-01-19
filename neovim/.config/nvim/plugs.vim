@@ -105,7 +105,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 	" Snippets suggested by auto-completion 
 	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-	let g:coq_settings = { 'auto_start': 'shut-up', 'keymap':{'pre_select':v:true, 'jump_to_mark':'<c-t>'}}
+	let g:coq_settings = { 'auto_start': 'shut-up', 'keymap':{'jump_to_mark':'<c-t>'}}
 
 	Plug 'f-person/git-blame.nvim'
 	let g:gitblame_enabled = 0
