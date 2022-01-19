@@ -143,4 +143,6 @@ call plug#begin('~/.vim/plugged')
 		" Map ctrl-/ to comment
 		nnoremap <C-_> <cmd>Commentary<cr>
 
+	" Smart text object selection
+	Plug 'RRethy/nvim-treesitter-textsubjects'
 call plug#end()
