@@ -140,5 +140,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Commenting  command - `gcc`
 	Plug 'tpope/vim-commentary'
+		" Map ctrl-/ to comment
+		nnoremap <C-_> <cmd>Commentary<cr>
 
 call plug#end()
