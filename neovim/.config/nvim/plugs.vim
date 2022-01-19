@@ -27,9 +27,6 @@ call plug#begin('~/.vim/plugged')
                 endfunction
                 command! ProjectFiles execute 'Files' s:find_git_root()
 
-                " set ctrl-p to FZF fuzzy searching from the git root
-                " nnoremap <silent> <C-p> :ProjectFiles<CR>
-		nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
 
                 let g:fzf_action = {
                   \ 'ctrl-t': 'tab split',
@@ -123,6 +120,18 @@ call plug#begin('~/.vim/plugged')
 		" Disable auto-completion in telescope
 		autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
 
+		" Search the project for text
+		nnoremap <leader>F <cmd>Telescope live_grep<cr>
+
+		" Search the buffer for text
+		nnoremap <leader>f <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+                " set ctrl-p to FZF fuzzy searching from the git root
+                " nnoremap <silent> <C-p> :ProjectFiles<CR>
+		nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
+
+		" set leader p to bring up a list of commands
+		nnoremap <leader>p <cmd>Telescope commands<cr>
 	" See the current function
 	Plug 'romgrk/nvim-treesitter-context'
 
