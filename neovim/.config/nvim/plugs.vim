@@ -145,4 +145,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Smart text object selection
 	Plug 'RRethy/nvim-treesitter-textsubjects'
+
+	" Fix Python indentation
+	Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
