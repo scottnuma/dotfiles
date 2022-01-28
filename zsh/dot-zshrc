@@ -51,3 +51,10 @@ export FZF_ALT_C_COMMAND='fd --hidden --type d . --color=never'
 export PATH="$PATH:$HOME/.rvm/bin"
 
 test -f ~/.zshrc-render && source ~/.zshrc-render
+
+# Jump - fuzzy cd
+# http://gsamokovarov.com/jump/
+eval "$(jump shell)"
+
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
