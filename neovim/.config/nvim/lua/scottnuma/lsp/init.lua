@@ -51,3 +51,6 @@ require'lspconfig'.gopls.setup{
 require'lspconfig'.solargraph.setup{
   on_attach = on_attach
 }
+
+
+require'lspconfig'.golangci_lint_ls.setup{}

@@ -5,6 +5,7 @@
 	editor = nvim
 	excludesfile = /home/scott/.gitignore_global
 	pager = delta
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [pull]

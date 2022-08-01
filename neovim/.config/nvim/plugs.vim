@@ -48,6 +48,12 @@ call plug#begin('~/.vim/plugged')
         let g:go_doc_keywordprg_enabled = 0
 
 
+	" Since we're in neovim, run jobs in a new terminal
+	let g:go_term_enabled = 1
+	let g:go_term_mode = "split"	" Default to horizontal splits
+	let g:go_term_close_on_exit = 1	" Don't close terminal after failure
+
+
         " disable vim-go :GoDef short cut (gd)
         " this is handled by LanguageClient [LC]
         let g:go_def_mapping_enabled = 0
@@ -148,4 +154,9 @@ call plug#begin('~/.vim/plugged')
 
 	" Fix Python indentation
 	Plug 'Vimjas/vim-python-pep8-indent'
+
+	" Git Changes
+	Plug 'airblade/vim-gitgutter'
+	let g:gitgutter_map_keys = 0
+
 call plug#end()

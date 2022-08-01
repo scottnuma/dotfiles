@@ -58,3 +58,10 @@ eval "$(jump shell)"
 
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# rbenv
+eval "$(rbenv init - zsh)"
+
+# Try to make [ ] and ( ) perform normally
+# https://unix.stackexchange.com/questions/149101/disable-glob-qualifiers-in-zsh
+setopt no_glob
