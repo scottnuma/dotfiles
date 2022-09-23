@@ -159,4 +159,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	let g:gitgutter_map_keys = 0
 
+	Plug 'ryanoasis/vim-devicons'
+
+	Plug 'wsdjeg/vim-fetch'
+
 call plug#end()
