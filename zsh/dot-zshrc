@@ -65,3 +65,6 @@ eval "$(rbenv init - zsh)"
 # Try to make [ ] and ( ) perform normally
 # https://unix.stackexchange.com/questions/149101/disable-glob-qualifiers-in-zsh
 setopt no_glob
+
+# Set the user config directory
+export XDG_CONFIG_HOME="$HOME/.config"
