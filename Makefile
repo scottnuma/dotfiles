@@ -5,8 +5,6 @@ git:
 .PHONY: vim
 vim:
 	stow -v --dotfiles vim
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	vim +PluginInstall +qall
 
 .PHONY: tmux
 tmux:
