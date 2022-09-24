@@ -46,3 +46,7 @@ capslock:
 .PHONY: polybar
 polybar:
 	stow -v polybar
+
+.PHONY: lazygit
+lazygit:
+	stow -v --dotfiles lazygit
