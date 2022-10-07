@@ -82,6 +82,15 @@ call plug#begin('~/.vim/plugged')
         " treesitter
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+	" See the current function
+	Plug 'nvim-treesitter/nvim-treesitter-context'
+
+	" Text objects
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+	" Smart text object selection
+	Plug 'RRethy/nvim-treesitter-textsubjects'
+
         " sublime style ctrl shift f
         " https://github.com/dyng/ctrlsf.vim
         Plug 'dyng/ctrlsf.vim'
@@ -137,20 +146,13 @@ call plug#begin('~/.vim/plugged')
 		nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
 
 		" set leader p to bring up a list of commands
-		nnoremap <leader>p <cmd>Telescope commands<cr>
-	" See the current function
-	Plug 'romgrk/nvim-treesitter-context'
-
-	" Text objects
-	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+		nnoremap <leader>c <cmd>Telescope commands<cr>
 
 	" Commenting  command - `gcc`
 	Plug 'tpope/vim-commentary'
 		" Map ctrl-/ to comment
 		nnoremap <C-_> <cmd>Commentary<cr>
 
-	" Smart text object selection
-	Plug 'RRethy/nvim-treesitter-textsubjects'
 
 	" Fix Python indentation
 	Plug 'Vimjas/vim-python-pep8-indent'

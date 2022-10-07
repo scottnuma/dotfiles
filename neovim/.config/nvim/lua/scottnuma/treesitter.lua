@@ -22,9 +22,19 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     prev_selection = '8', -- (Optional) keymap to select the previous selection
     keymaps = {
-            ['9'] = 'textsubjects-smart',
-            ['0'] = 'textsubjects-container-outer',
+            ['<cr>'] = 'textsubjects-smart',
+            ['co'] = 'textsubjects-container-outer',
+	    ['ci'] = 'textsubjects-container-inner',
         },
     },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      -- init_selection = "<cr>",
+      -- scope_incremental = "<cr>",
+      node_incremental = "<tab>",
+      node_decremental = "<s-tab>",
+    },
+  },
 }
 

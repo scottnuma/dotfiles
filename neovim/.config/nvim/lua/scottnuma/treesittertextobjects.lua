@@ -9,10 +9,15 @@ require'nvim-treesitter.configs'.setup {
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
 	-- Such `yaf` to copy an entire function
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
+	-- Easiest to play with by entering visual mode first 
+
+	-- function.outer includes the entire function
+        ["fo"] = "@function.outer",
+	-- function.inner excludes the brackets and contents outside them
+        ["fi"] = "@function.inner",
+
+        ["co"] = "@class.outer",
+        ["ci"] = "@class.inner",
       },
     },
   },
@@ -21,11 +26,14 @@ require'nvim-treesitter.configs'.setup {
       enable = true,
       border = 'none',
       peek_definition_code = {
-
-	-- Bring up a window with the function definition
 	-- Do twice to enter window
-        ["<leader>df"] = "@function.outer",
-        ["<leader>dF"] = "@class.outer",
+	
+	-- Peek at the function under the cursor 
+	-- leader peek function
+        ["<leader>pf"] = "@function.outer",
+	-- Peek at the class under the cursor
+	-- leader peek class
+        ["<leader>pc"] = "@class.outer",
       },
     },
     move = {
