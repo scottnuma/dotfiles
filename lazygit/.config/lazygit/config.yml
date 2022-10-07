@@ -1,15 +1,15 @@
 gui:
   showIcons: true
-  theme:
-    lightTheme: true
-    activeBorderColor:
-      - black
-      - bold
-    inactiveBorderColor:
-      - black
-    selectedLineBgColor:
-      - default
+  # theme:
+  #   lightTheme: true
+  #   activeBorderColor:
+  #     - black
+  #     - bold
+  #   inactiveBorderColor:
+  #     - black
+  #   selectedLineBgColor:
+  #     - default
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --light --syntax-theme GitHub --side-by-side
+    pager: delta --paging=never --dark --syntax-theme GitHub --side-by-side
