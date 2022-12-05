@@ -35,6 +35,8 @@ hi StatusLine ctermbg=black ctermfg=4
 " Enable viusal mode for all modes
 set mouse=a
 
+" make it easy to reload config 
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Highlight all search matches
 set hlsearch
