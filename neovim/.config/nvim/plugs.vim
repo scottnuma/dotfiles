@@ -59,9 +59,9 @@ call plug#begin('~/.vim/plugged')
         let g:go_def_mapping_enabled = 0
         
 	" Chadtree file explorer
-	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-		nnoremap <leader>n <cmd>CHADopen<cr>
-		let g:chadtree_settings = {'keymap.v_split': ['v'], 'keymap.h_split': ['h']}
+	Plug 'preservim/nerdtree'
+		nnoremap <leader>n :NERDTreeToggle<CR>
+		nnoremap <leader>N :NERDTreeFind<CR>
 
 
 
