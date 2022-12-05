@@ -143,7 +143,7 @@ call plug#begin('~/.vim/plugged')
 
                 " set ctrl-p to FZF fuzzy searching from the git root
                 " nnoremap <silent> <C-p> :ProjectFiles<CR>
-		nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
+		nnoremap <silent><C-p> <cmd>Telescope find_files hidden=true<cr>
 
 		" set leader p to bring up a list of commands
 		nnoremap <leader>c <cmd>Telescope commands<cr>
