@@ -145,7 +145,7 @@ call plug#begin('~/.vim/plugged')
                 " nnoremap <silent> <C-p> :ProjectFiles<CR>
 		nnoremap <silent><C-p> <cmd>Telescope find_files hidden=true<cr>
 
-		" set leader p to bring up a list of commands
+		" set leader c to bring up a list of commands
 		nnoremap <leader>c <cmd>Telescope commands<cr>
 
 	" Commenting  command - `gcc`
